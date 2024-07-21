@@ -11,7 +11,9 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import bodyParser from "body-parser";
 import { Server } from "socket.io";
 
-dotenv.config();
+dotenv.config({
+   path:"./.env"
+});
 
 const app = express();
 const port = process.env.PORT || 5000; // default port
