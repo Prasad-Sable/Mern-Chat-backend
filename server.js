@@ -25,8 +25,9 @@ dbConnect();
 app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
+app.use(express.static("public"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.json());
 
 // Routes
