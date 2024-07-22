@@ -26,8 +26,8 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(express.static())
-app.use(express.json("public"));
+app.use(express.static("public"))
+app.use(express.json());
 
 // Routes
 app.use("/api/users", userRoutes);
