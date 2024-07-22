@@ -21,9 +21,15 @@ const port = process.env.PORT || 5000; // default port
 // Database connection
 dbConnect();
 
+const corsOptions = {
+  origin: process.env.CLIENT_URI
+}
+
+console.log(corsOptions)
+
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(morgan('dev'));
 app.use(express.static("public"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
